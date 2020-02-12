@@ -6,7 +6,7 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 
 const ProductComponent = (props) => {
   const [cant, setCant]=useState()
-
+  const arrMenu=[];
   const obj1 = props.dataDeUnProducto;
   console.log(obj1);
 
@@ -16,26 +16,27 @@ const ProductComponent = (props) => {
     console.log('hola');
     //const idObj=obj.id;
     setCant({value: event.target.value});
+    //console.log(cant);
     //setCant(introValue.current.value);
   };
-
-  function more (desc, price, quantity) {
-    const arrMenu=[];
-    arrMenu.push({
+  
+  function more (desc, price, quantity) { 
+    console.log(desc, price, quantity.value)
+   /* const arrMenu = {
       Descripcion: desc,
       Precio: price,
       Cantidad: quantity,
-    });
-    console.log(arrMenu);
+  };
+    const rrr=arrMenu.push();
+    console.log(rrr); */
   };
   
   //coloca en value la cantidad de cada elemento
-  return (<li class='menu-item-list' key={obj1.id}><br></br>{obj1.Descripcion} {obj1.Precio} <input className='cant-prod' type='text' id='canti' onChange={handleChange}></input>
+  return (<li className='menu-item-list' key={obj1.id}><br></br>{obj1.Descripcion} {obj1.Precio} <input className='cant-prod' type='text' id='canti' onChange={handleChange}></input>
   <button className='mas' onClick={(event)=> {
     event.preventDefault();
     more(obj1.Descripcion, obj1.Precio, cant);
     }}>+</button></li>)
-   
 };
 
   function MenuComponent() {
@@ -61,6 +62,7 @@ const ProductComponent = (props) => {
       
     function click(nombreDeLaCategoria){
       console.log(nombreDeLaCategoria);
+      //console.log(value1);
       const arrProducts = value1.docs.map((elem) => {
         const obj = {
           Categoria: elem.data().Categoria,
