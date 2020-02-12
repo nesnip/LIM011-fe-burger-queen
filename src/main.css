@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* .main {
+  width: 100%;
+  height: 100%;
+  display: flexbox;
+} */
+.logoheader {
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    color: red;
+  }
+
+.logo{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+
+.menuClass{
+  position: relative;
+  top: 100px;
+  left: 10px;
+  align-content: center;
+    width: 40%;
+    height: 100%;
+    text-align: left;
+}
+
+.titleTabs{
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  align-content: space-between;
+}
+
+.titleTabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.titleTabs button:hover {
+  background-color: #ddd;
+}
+.tabContent {
+  position: relative;
+  background-color:lightcyan;
+  /* border: 2px solid red;  */
+  bottom: 10px; 
+  display: flex;
+  /* top: 300px; */
+  /* display: none;
+  padding: 6px 12px;
+  border: 2px solid red;
+  border-top: none */
+}
+.menu-list{
+  position: relative;
+  top: -4px;
+  left: 20px;
+ 
+  /* bottom: 0vh; */
+  /* padding: 50; */
+  list-style-position: inside;
+ list-style-type: none;
+}
+
+#canti{
+  position: absolute;
+  width: 15%;
+  left: 220px;
+  display: flex;
+ /*  padding: 1em; */
+ /*  display: none;
+  border: 2px solid red;
+  border-top: none */
+}
+.mas{
+  position: absolute;
+  width: 15%;
+  left: 250px;
+ /*  padding: 1em; */
+  text-decoration: teal;
+  display: flex;
+}
