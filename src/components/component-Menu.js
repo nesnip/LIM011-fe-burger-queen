@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import ReactDOM from 'react-dom'
+//import ReactDOM from 'react-dom'
 import '../main.css';
 import firebase from '../firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 const ProductComponent = (props) => {
   const [cant, setCant]=useState()
-  const arrMenu=[];
+  //const arrMenu=[];
   const obj1 = props.dataDeUnProducto;
   console.log(obj1);
 
