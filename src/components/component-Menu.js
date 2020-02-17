@@ -9,12 +9,11 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 //const arrMoreProd=[];
 const ProductComponent = (props) => {
   const [cant, setCant]=useState(0)
-  const [item, setItem]=useState('')
+  
   
   const obj1 = props.dataDeUnProducto;
  // console.log(obj1);
 
-  
 
   function handleChange(event) {
     event.preventDefault();
@@ -32,7 +31,6 @@ const ProductComponent = (props) => {
      Cantidad: quantity,
     };
  
-  props.addProduct(arrMore);
   console.log(arrMore);
 
   };

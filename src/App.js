@@ -11,18 +11,12 @@ import MenuComponent from './components/component-Menu.js';
 
 
 function App() {
-  const [arrProduct, setArrProduct]=useState([])
-
-  const addProduct= (obj)=> {
-    const newArray=[...arrProduct, obj];
-   console.log(newArray);
-    
-  }
+ 
   
   return (
     <div>
       <Header />
-      <MenuComponent addProduct={ addProduct } />
+      <MenuComponent />
     </div>
   );
 }
