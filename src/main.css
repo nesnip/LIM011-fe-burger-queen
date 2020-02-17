@@ -55,7 +55,7 @@
   position: relative;
   background-color:lightcyan;
   /* border: 2px solid red;  */
-  bottom: 10px; 
+ 
   display: flex;
   /* top: 300px; */
   /* display: none;
@@ -64,8 +64,7 @@
   border-top: none */
 }
 .menu-list{
-  position: relative;
-  top: -4px;
+ /*  top: -4px;
   left: 20px;
  
   /* bottom: 0vh; */
@@ -73,21 +72,27 @@
   list-style-position: inside;
  list-style-type: none;
 }
-
+.menu-item-list{
+ padding: 0 20% 0 5%;
+ display: flex;
+ }
+  
 #canti{
-  position: absolute;
-  width: 15%;
-  left: 220px;
+  position: relative;
+  padding: 0 10% 0 2%;
+   /*width: 15%; */
+  
   display: flex;
  /*  padding: 1em; */
  /*  display: none;
   border: 2px solid red;
   border-top: none */
 }
-.mas{
-  position: absolute;
-  width: 15%;
-  left: 250px;
+.more{
+  position: relative;
+  padding: 0 10% 0 2%;
+ /*width: 15%; */
+ 
  /*  padding: 1em; */
   text-decoration: teal;
   display: flex;

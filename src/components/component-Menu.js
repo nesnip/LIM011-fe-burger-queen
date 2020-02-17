@@ -4,62 +4,63 @@ import '../main.css';
 import firebase from '../firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
+
+
+//const arrMoreProd=[];
 const ProductComponent = (props) => {
-  const [cant, setCant]=useState()
-  //const arrMenu=[];
+  const [cant, setCant]=useState(0)
+  const [item, setItem]=useState('')
+  
   const obj1 = props.dataDeUnProducto;
-  console.log(obj1);
+ // console.log(obj1);
+
+  
 
   function handleChange(event) {
     event.preventDefault();
-    //const introValue = useRef(null);
     console.log('hola');
-    //const idObj=obj.id;
     setCant({value: event.target.value});
     //console.log(cant);
-    //setCant(introValue.current.value);
   };
-  
+
+
   function more (desc, price, quantity) { 
-    console.log(desc, price, quantity.value)
-   /* const arrMenu = {
+   // console.log(desc, price, quantity.value)
+    const arrMore = {
       Descripcion: desc,
-      Precio: price,
-      Cantidad: quantity,
+     Precio: price,
+     Cantidad: quantity,
+    };
+ 
+  props.addProduct(arrMore);
+  console.log(arrMore);
+
   };
-    const rrr=arrMenu.push();
-    console.log(rrr); */
-  };
+ // const arrelementProd=props.more;
+  //console.log(arrelementProd);
+  
+ 
   
   //coloca en value la cantidad de cada elemento
-  return (<li className='menu-item-list' key={obj1.id}><br></br>{obj1.Descripcion} {obj1.Precio} <input className='cant-prod' type='text' id='canti' onChange={handleChange}></input>
-  <button className='mas' onClick={(event)=> {
+  return (<li className='menu-item-list' key={obj1.id}><span>{obj1.Descripcion} {obj1.Precio} <input className='cant-prod' type='number' value={cant.value} id='canti' onChange={handleChange}></input>
+  <button className='more' onClick={(event)=> {
     event.preventDefault();
-    more(obj1.Descripcion, obj1.Precio, cant);
-    }}>+</button></li>)
+   // console.log(cant.value);
+    more(obj1.Descripcion, obj1.Precio, cant.value);
+    }}>+</button></span></li>)
 };
 
-  function MenuComponent() {
+  function MenuComponent(props) {
     const [menu, setMenu]=useState([])
    
    
-    //const FirestoreCollection = () => {
       const [value1, loading, error] = useCollection(
         firebase.firestore().collection('Products'),
         {
           snapshotListenOptions: { includeMetadataChanges: true },
         }
       );
-      
-     /*  function handleChange(event) {
-        event.preventDefault();
-        console.log('hola');
-        //const idObj=obj.id;
-        // setCant({value: event.target.value});
-
-      
-      }; */
-      
+    
     function click(nombreDeLaCategoria){
       console.log(nombreDeLaCategoria);
       //console.log(value1);
@@ -102,9 +103,8 @@ const ProductComponent = (props) => {
       <div className='tabContent'>
       
    <ul className='menu-list'>
-      {menu.map((obj) => 
-        <ProductComponent dataDeUnProducto={obj}  />
-      
+      {menu.map((obj) =>
+        <ProductComponent dataDeUnProducto={obj} />
       )}
    </ul>
   </div>
@@ -114,6 +114,8 @@ const ProductComponent = (props) => {
     return element;
       // }
   }
+
+ 
 export default MenuComponent;
 
 

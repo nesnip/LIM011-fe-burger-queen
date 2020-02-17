@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 //import ReactDOM from 'react-dom';
 //import logo from './logo.svg';
 //import './App.css';
@@ -11,11 +11,18 @@ import MenuComponent from './components/component-Menu.js';
 
 
 function App() {
+  const [arrProduct, setArrProduct]=useState([])
 
+  const addProduct= (obj)=> {
+    const newArray=[...arrProduct, obj];
+   console.log(newArray);
+    
+  }
+  
   return (
     <div>
       <Header />
-      <MenuComponent />
+      <MenuComponent addProduct={ addProduct } />
     </div>
   );
 }
