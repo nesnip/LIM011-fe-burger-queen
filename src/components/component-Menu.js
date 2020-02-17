@@ -8,7 +8,7 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 
 //const arrMoreProd=[];
 const ProductComponent = (props) => {
-  const [cant, setCant]=useState(0)
+  const [cant, setCant]=useState()
   
   
   const obj1 = props.dataDeUnProducto;
@@ -16,9 +16,10 @@ const ProductComponent = (props) => {
 
 
   function handleChange(event) {
-    event.preventDefault();
+    //event.preventDefault();
     console.log('hola');
-    setCant({value: event.target.value});
+    const valor= event.target.value;
+    setCant(valor);
     //console.log(cant);
   };
 
@@ -40,11 +41,11 @@ const ProductComponent = (props) => {
  
   
   //coloca en value la cantidad de cada elemento
-  return (<li className='menu-item-list' key={obj1.id}><span>{obj1.Descripcion} {obj1.Precio} <input className='cant-prod' type='number' value={cant.value} id='canti' onChange={handleChange}></input>
+  return (<li className='menu-item-list' key={obj1.id}><span>{obj1.Descripcion} {obj1.Precio} <input className='cant-prod' type='text' value={cant} id='canti' onChange={handleChange}></input>
   <button className='more' onClick={(event)=> {
     event.preventDefault();
    // console.log(cant.value);
-    more(obj1.Descripcion, obj1.Precio, cant.value);
+    more(obj1.Descripcion, obj1.Precio, cant);
     }}>+</button></span></li>)
 };
 
@@ -115,5 +116,3 @@ const ProductComponent = (props) => {
 
  
 export default MenuComponent;
-
-
