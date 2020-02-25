@@ -69,15 +69,15 @@ const ProductComponent = (props) => {
  
   
   //coloca en value la cantidad de cada elemento
-  return (<li className='menu-item-list' ><span className='input-Bott' >{obj1.Descripcion} <label>S/.</label>
-  {obj1.Precio} <input className='quant-prod' type='text' value={cant}  onChange={handleChange}></input>
-  <img src="https://img.icons8.com/offices/30/000000/plus.png" className='more' onClick={(event)=> {
+  return (<li className='menu-item-list' ><p className='elements' >{obj1.Descripcion}</p>
+  <p className='numbers' >{obj1.Precio}</p><p className='numbers'><input className='quant-prod' type='text' value={cant}  onChange={handleChange}></input></p><p className='numbers'>
+  <img src="https://img.icons8.com/offices/30/000000/plus.png" className='more' alt='plus'  onClick={(event)=> {
     event.preventDefault();
     const valor1= cant;
    // console.log(cant.value);
    addItemProduct(obj1.id, obj1.Descripcion, obj1.Precio, valor1);
    buttonTotal(obj1);
-    }}></img></span></li>)
+    }}></img></p></li>)
 };
 
   function MenuComponent(props) {

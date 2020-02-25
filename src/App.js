@@ -36,7 +36,8 @@ function App() {
     console.log(findEleDel);
     const posdEleDel = productsOrder.indexOf(findEleDel);
     console.log(posdEleDel);
-    //const delArrProducts = productsOrder.splice(posdEleDel, 1);
+    const delArrProducts = productsOrder.splice(posdEleDel, 1);
+    console.log(delArrProducts);
     productsOrder.splice(posdEleDel, 1);
     console.log(productsOrder);
     const newArrayDel = [...productsOrder];

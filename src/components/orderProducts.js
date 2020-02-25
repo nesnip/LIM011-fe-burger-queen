@@ -81,7 +81,8 @@ const OrderProducts = (props) => {
         <div className='total' >
         <label onClick={buttonTotal} >TOTAL</label>
         <label>S/.</label>
-        <input value={total} ></input>
+         {/* <input value={total} ></input>  */}
+         <p>{total}</p>
         </div>
         <div>
         <button className='btnOrderSend' onClick={sendOrder} >ENVIAR ORDEN</button>

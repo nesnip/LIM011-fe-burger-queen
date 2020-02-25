@@ -7,14 +7,16 @@
 .display-flex {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: row;
+
+  
 } 
 .logoheader {
     width: 100%;
     height: 35%;
-    background-color: ;
+    background-color:midnightblue;
     display: flex;
     justify-content: flex-start;
     align-content: space-between;
@@ -37,12 +39,13 @@
   left: 10px;
   
   margin-top: 20px;*/
-  
-  justify-content: left;
-  align-content: left;
-    width: 40%;
+  width: 40%;
     height: 70%;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+    
+   
 }
 .orderClass{
   /* position:relative;
@@ -58,7 +61,7 @@
     text-align: left;
 }
 .titleTabs{
-  
+  width: 100%;
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
@@ -134,6 +137,7 @@
   background-color:white;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
  
 }
 .menu-list{
@@ -144,12 +148,14 @@
   /* bottom: 0vh; */
   /* padding: 50; */
   width: 100%;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   display: flex;
   flex-direction: column;
   list-style-position: inside;
  list-style-type: none;
  justify-content: space-between;
+
+
  margin-bottom: 0;
 
 
@@ -160,7 +166,7 @@
    left: 20px;
   
    /* bottom: 0vh; */
-   /* padding: 50; */
+   /* padding: 50; 
    width: 100%;
    flex-wrap: wrap;
    display: flex;
@@ -168,32 +174,36 @@
    list-style-position: inside;
   list-style-type: none;
   justify-content: space-between;
-  margin-bottom: 0;
+  margin-bottom: 0;*/
  }
 .menu-item-list{
  /*padding: 0 0 0 5%; */
 
  display: flex;
- flex-direction: column;
-
-
- justify-content: space-between;
+ flex-direction: row;
+ justify-content: space-around;
+ align-items: flex-start;
  }
  
  .menu-item-list-order{
   /*padding: 0 0 0 5%; */
  
   display: flex;
-  flex-direction: column;
- flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
   }
-  .input-Bott{
+  .elements{
+    width : 90px;
+    display: flex;
+  flex-direction: row;  
+  }
+  .numbers{
+    width : 19px;
     display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-    
+  
+ 
   }
   .input-Bott-Order{
     display: flex;
@@ -218,14 +228,14 @@
 .more{
 
   
- width: 25px; 
+ width: auto; 
  
  /*  padding: 1em; */
   text-decoration: teal;
  
 }
 .btnDelete{
-  width: 40px;
+  width: 30px;
 }
 .btnOrderSend{
   width: 100%;
