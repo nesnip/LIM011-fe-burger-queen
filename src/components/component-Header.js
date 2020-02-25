@@ -1,17 +1,18 @@
 import React from 'react';
 import '../main.css';
-//import burguer from '../imagenes/burguerheader';
+//import burguerheader from '../burguerheader.jpg';
 
 
   function Header() {
     const element= (
       
         <header class='logoheader'>
-          <h1 className='logo'>Burguer Queensss</h1>
-          <figure className='img-burguer'>
+          
+          <h1 className='title-logo'>BURGUER QUEEN</h1>
+          <img src='queenBurguer1.png' className="img-logo" alt="logo"/> 
          
-          </figure>
-        </header>
+          </header> 
+      
     
     );
     return element;

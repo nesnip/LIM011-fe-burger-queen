@@ -2,58 +2,111 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
-/* .main {
+.display-flex {
   width: 100%;
   height: 100%;
-  display: flexbox;
-} */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} 
 .logoheader {
     width: 100%;
-    height: 80%;
-    text-align: center;
-    color: red;
+    height: 35%;
+    background-color: ;
+    display: flex;
+    justify-content: flex-start;
+    align-content: space-between;
+   
   }
-
-.logo{
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+  
+.title-logo{
+   
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 0;
 }
-
+.img-logo{
+    width: 45px;
+}
 
 .menuClass{
-  position: relative;
+  /*  position:relative; 
   top: 100px;
   left: 10px;
-  align-content: center;
+  
+  margin-top: 20px;*/
+  
+  justify-content: left;
+  align-content: left;
     width: 40%;
-    height: 100%;
+    height: 70%;
     text-align: left;
 }
-
+.orderClass{
+  /* position:relative;
+  margin-top: 10px;
+  right: 10px; 
+  display: flex; */
+  padding: 10px 20px 10px;
+  background-color:darkgrey;
+  justify-content:center;
+  align-content: center;
+    width: 50%;
+    height: 70%;
+    text-align: left;
+}
 .titleTabs{
+  
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
-  align-content: space-between;
+  align-content:space-between;
+  
 }
-
+.titleTabsOrder{
+  display: flex;
+  overflow: hidden;
+   /*border: 1px solid #ccc;*/
+  background-color: #f1f1f1;
+  justify-content: space-around;
+  align-content: space-around;
+ /* margin-top: 5px;
+  display: flex;
+  width: 70%;
+  margin-right: 10px;
+  padding-left: 90px;*/
+}
 .titleTabs button {
   background-color: inherit;
   float: left;
+  border-bottom:black 1px;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  
+}
+.titleTabsOrder button {
+  background-color: inherit;
+  display: flex;
+  float: center;
+  border: none;
+  outline: none;
+  cursor:default;
+  padding: 14px 16px;
+  transition: 0.3s;
+  
+  
 }
 .titleTabs button:hover {
   background-color: #ddd;
 }
 .tabContent {
-  position: relative;
-  background-color:lightcyan;
+  
+  background-color:white;
   /* border: 2px solid red;  */
  
   display: flex;
@@ -63,20 +116,91 @@
   border: 2px solid red;
   border-top: none */
 }
+.input-name{
+  color: black;
+        background-color: white;
+        border:none;
+        border-bottom:1px solid black;
+      
+}
+.tabContentOrder{
+  /*position: relative;
+  background-color:lightcyan;
+  display: flex;
+  flex-direction: column;
+  padding-left: 360px;
+  margin-right: 10px;*/
+  
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+ 
+}
 .menu-list{
+ /*  position: relative;
  /*  top: -4px;
   left: 20px;
  
   /* bottom: 0vh; */
   /* padding: 50; */
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
   list-style-position: inside;
  list-style-type: none;
+ justify-content: space-between;
+ margin-bottom: 0;
+
+
 }
-.menu-item-list{
- padding: 0 20% 0 5%;
- display: flex;
- }
+.menu-list-order{
+  /*  position: relative;
+  /*  top: -4px;
+   left: 20px;
   
+   /* bottom: 0vh; */
+   /* padding: 50; */
+   width: 100%;
+   flex-wrap: wrap;
+   display: flex;
+   flex-direction: column;
+   list-style-position: inside;
+  list-style-type: none;
+  justify-content: space-between;
+  margin-bottom: 0;
+ }
+.menu-item-list{
+ /*padding: 0 0 0 5%; */
+
+ display: flex;
+ flex-direction: column;
+
+
+ justify-content: space-between;
+ }
+ 
+ .menu-item-list-order{
+  /*padding: 0 0 0 5%; */
+ 
+  display: flex;
+  flex-direction: column;
+ flex-wrap: wrap;
+  justify-content: space-between;
+  }
+  .input-Bott{
+    display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+    
+  }
+  .input-Bott-Order{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 #canti{
   position: relative;
   padding: 0 10% 0 2%;
@@ -88,12 +212,31 @@
   border: 2px solid red;
   border-top: none */
 }
+.quant-prod{
+  width: 20px;
+}
 .more{
-  position: relative;
-  padding: 0 10% 0 2%;
- /*width: 15%; */
+
+  
+ width: 25px; 
  
  /*  padding: 1em; */
   text-decoration: teal;
+ 
+}
+.btnDelete{
+  width: 40px;
+}
+.btnOrderSend{
+  width: 100%;
+  background-color: magenta;
+  font-weight: bold;
+  
+}
+.total{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }

@@ -5,29 +5,64 @@ import React, { useState } from 'react';
 import './main.css';
 import Header from './components/component-Header.js';
 import MenuComponent from './components/component-Menu.js';
-//import Ffgg from './components/ff.js';
-
+import OrderProducts from './components/orderProducts.js';
+//import ItemOrder from './components/itemOrder.js';
 //import Imagen from './components/component-imagen.js';
-//import firebase from './firebase';
+import firebase from './firebase';
+
 
 
 
 function App() {
-  const [product, setProduct] = useState([]);
+  const [productsOrder, setProductOrder] = useState([]);
+  const [totalCountCli, setTotalCountCli]= useState(0);
  
-  const productitem = (obj) => {
-    const newArray = [...product, obj];
-    setProduct(newArray);
+ 
+  const addProductItemOrderr = (obj) => {
+    const newArray = [...productsOrder, obj];
+    setProductOrder(newArray);
+
     console.log(newArray);
+    console.log(newArray.id);
   };
+
+  const totClient = (valor) => {
+    setTotalCountCli(totalCountCli + valor);
+  }
+
+  const delProductItemOrder = (id) => {
+    console.log(productsOrder);
+    const findEleDel = productsOrder.find(ele =>ele.id === id );
+    console.log(findEleDel);
+    const posdEleDel = productsOrder.indexOf(findEleDel);
+    console.log(posdEleDel);
+    //const delArrProducts = productsOrder.splice(posdEleDel, 1);
+    productsOrder.splice(posdEleDel, 1);
+    console.log(productsOrder);
+    const newArrayDel = [...productsOrder];
+    setProductOrder(newArrayDel);
+    console.log('estado');
+    console.log(newArrayDel);
+   };
+   
+   const sendOrder = (obj) => {
+     firebase.firestore()
+    .collection('orders')
+    .add({
+      obj
+    })
+    console.log('Orders');
+   }
+   
+  
+  
   return (
-    <div>
+    <main className='display-flex'>
       <Header />
-      <MenuComponent />
-      
-     
-      
-    </div>
+      <MenuComponent addProduct={addProductItemOrderr} totalClient={totClient} />
+      <OrderProducts productsOrder={productsOrder} delProduct={delProductItemOrder} totalClient={totalCountCli} sendOrder={sendOrder}  />
+   
+    </main>
   );
 }
 
