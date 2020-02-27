@@ -6,6 +6,7 @@ const OrderProducts = (props) => {
     const [client,setClient] = useState('');
     const order = props.productsOrder;
     const total = props.totalClient;
+    const reset = props.resetOrder;
     //const valTotal = props.tot
     //const totalCount= props.totalCountClient;
     const sendOrderProd = props.sendOrder;
@@ -47,14 +48,22 @@ const OrderProducts = (props) => {
     };
     
     const sendOrder = () => {
-        console.log(order);    
+        if (client === '') {
+            alert('Ingrese nombre del cliente');
+        }
+        else {
+            console.log(order);    
             const obj1 = {
                 Cliente: client,
                 Order: order,
                 Total: total
         }
         sendOrderProd(obj1);
-    }
+        reset();
+        setClient('');
+        alert('La orden se envió con éxito');
+        } 
+    };
         
        
                 console.log('objFirebase');
@@ -71,18 +80,18 @@ const OrderProducts = (props) => {
        <br></br>
         <div className="titleTabsOrder"> 
          <button>Producto</button>
-         <button>Precio</button>
+         <button>Precio (S/.)</button>
          <button>Cantidad</button>
         </div>
         <div className='tabContentOrder'>
         <ul className='menu-list-order'>
-                {order.map((obj, index) => <ItemOrder  key= {index} data={obj} delOrderProduct={props.delProduct} />)}        
+                {order.map((obj, index) => <ItemOrder  key= {index} data={obj} delOrderProduct={props.delProduct}  />)}        
             </ul>
         <div className='total' >
         <label onClick={buttonTotal} >TOTAL</label>
-        <label>S/.</label>
+      
          {/* <input value={total} ></input>  */}
-         <p>{total}</p>
+         <p>S/.{total}</p>
         </div>
         <div>
         <button className='btnOrderSend' onClick={sendOrder} >ENVIAR ORDEN</button>

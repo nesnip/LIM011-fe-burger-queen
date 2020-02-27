@@ -18,6 +18,7 @@ function App() {
   const [totalCountCli, setTotalCountCli]= useState(0);
  
  
+ 
   const addProductItemOrderr = (obj) => {
     const newArray = [...productsOrder, obj];
     setProductOrder(newArray);
@@ -25,6 +26,8 @@ function App() {
     console.log(newArray);
     console.log(newArray.id);
   };
+  //console.log(productsOrder);
+ 
 
   const totClient = (valor) => {
     setTotalCountCli(totalCountCli + valor);
@@ -36,12 +39,23 @@ function App() {
     console.log(findEleDel);
     const posdEleDel = productsOrder.indexOf(findEleDel);
     console.log(posdEleDel);
-    const delArrProducts = productsOrder.splice(posdEleDel, 1);
-    console.log(delArrProducts);
-    productsOrder.splice(posdEleDel, 1);
-    console.log(productsOrder);
+     const delArrProducts = productsOrder.splice(posdEleDel, 1);
+     console.log(delArrProducts);
+     let mapPrecio = delArrProducts.map(ele => ele.Precio);
+     console.log(mapPrecio);
+     const price=mapPrecio[0];
+     console.log(price);
+     let mapCantidad = delArrProducts.map(ele => ele.Cantidad);
+     console.log(mapCantidad);
+     const quantity = mapCantidad[0];
+      console.log(quantity);
+      const res= totalCountCli - (price * quantity);
+      console.log(res);
+      console.log(productsOrder);
+
     const newArrayDel = [...productsOrder];
     setProductOrder(newArrayDel);
+    setTotalCountCli(res);
     console.log('estado');
     console.log(newArrayDel);
    };
@@ -55,13 +69,21 @@ function App() {
     console.log('Orders');
    }
    
+   /* const resetCant = (resCant) => {
+     console.log(resCant);
+   } */
   
+   const resetOrder = () => {
+    setProductOrder([]);
+    setTotalCountCli(0);
+   
+   }
   
   return (
     <main className='display-flex'>
       <Header />
-      <MenuComponent addProduct={addProductItemOrderr} totalClient={totClient} />
-      <OrderProducts productsOrder={productsOrder} delProduct={delProductItemOrder} totalClient={totalCountCli} sendOrder={sendOrder}  />
+      <MenuComponent addProduct={addProductItemOrderr} totalClient={totClient} resetCant = {productsOrder} />
+      <OrderProducts productsOrder={productsOrder} delProduct={delProductItemOrder} totalClient={totalCountCli} sendOrder={sendOrder} resetOrder = {resetOrder} />
    
     </main>
   );

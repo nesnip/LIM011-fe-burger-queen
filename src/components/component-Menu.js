@@ -14,6 +14,8 @@ const ProductComponent = (props) => {
   const totalCta = props.totClient;
   
   const obj1 = props.dataDeUnProducto;
+ // const rCant= props.rsCant;
+ 
  
  // console.log(obj1);
 
@@ -28,28 +30,31 @@ const ProductComponent = (props) => {
 
 
   function addItemProduct (id, desc, price, quantity) { 
+    console.log(quantity);
    // console.log(desc, price, quantity.value)
+   if (quantity === '' ) {
+    alert('Falta ingresar la cantidad');
+  }
+  else {
     const addItemProductObj = {
       id: id,
       Descripcion: desc,
      Precio: price,
      Cantidad: quantity,
     };
- 
     addProductItem(addItemProductObj);
-
+   //rsCant(cant);
+  }
+    
   };
-
+ /*  const checkInputQuant= (valor) => {
+    if (valor === 'undefined' ) {
+      alert('Falta ingresar la cantidad');
+    };
+  }; */
   let totalCount = 0;
   const buttonTotal = (objTotal) => {
     console.log(objTotal);
-    
-   /*  objTotal.forEach(element => {
-        const price= element.Precio;
-        const quantity = element.Cantidad;
-        totalCount += (price * quantity);
-        console.log(totalCount);
-         }); */
          const price= objTotal.Precio;
          console.log(price);
          const quantity = cant;
@@ -59,30 +64,29 @@ const ProductComponent = (props) => {
     //console.log(totalCount);
     //props.totClient= totalCount;
     totalCta(totalCount);
- //return totalCount;
-        
+    
+ //return totalCount;       
 };
 
- // const arrelementProd=props.more;
-  //console.log(arrelementProd);
-  
  
   
   //coloca en value la cantidad de cada elemento
   return (<li className='menu-item-list' ><p className='elements' >{obj1.Descripcion}</p>
-  <p className='numbers' >{obj1.Precio}</p><p className='numbers'><input className='quant-prod' type='text' value={cant}  onChange={handleChange}></input></p><p className='numbers'>
+  <p className='numbers' >S/.{obj1.Precio}</p><p className='numbers'><input className='quant-prod' type='text' value={cant}  onChange={handleChange}></input></p><p className='numbers'>
   <img src="https://img.icons8.com/offices/30/000000/plus.png" className='more' alt='plus'  onClick={(event)=> {
     event.preventDefault();
     const valor1= cant;
    // console.log(cant.value);
    addItemProduct(obj1.id, obj1.Descripcion, obj1.Precio, valor1);
+  
    buttonTotal(obj1);
+   
     }}></img></p></li>)
 };
 
   function MenuComponent(props) {
     const [menu, setMenu]=useState([]);
-    //const totClient= props.totalCountCli;
+  
    
    
       const [value1, loading, error] = useCollection(
@@ -102,13 +106,15 @@ const ProductComponent = (props) => {
           Precio: elem.data().Precio,
           id: elem.id,
         }
+       // props.resetCant(obj);
         return obj;
        
       });
      
     const result = arrProducts.filter((elem) => elem.Categoria === nombreDeLaCategoria);
-  
+    //props.resetCant(result);
     setMenu(result);
+   
     }
   
     const element= (
@@ -136,8 +142,8 @@ const ProductComponent = (props) => {
       <div className='tabContent'>
       
    <ul className='menu-list'>
-      {menu.map((obj) =>
-        <ProductComponent key={obj.id} dataDeUnProducto={obj} addProductsList={props.addProduct} totClient={props.totalClient} />
+      {menu.map((obj) => 
+        <ProductComponent key={obj.id} dataDeUnProducto={obj} addProductsList={props.addProduct} totClient={props.totalClient}  />
       )}
    </ul>
   </div>
