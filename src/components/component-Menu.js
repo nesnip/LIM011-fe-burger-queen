@@ -4,8 +4,6 @@ import '../main.css';
 import firebase from '../firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
-
-
 //const arrMoreProd=[];
 const ProductComponent = (props) => {
   const [cant, setCant]= useState('')
@@ -71,9 +69,13 @@ const ProductComponent = (props) => {
  
   
   //coloca en value la cantidad de cada elemento
-  return (<li className='menu-item-list' ><p className='elements' >{obj1.Descripcion}</p>
-  <p className='numbers' >S/.{obj1.Precio}</p><p className='numbers'><input className='quant-prod' type='text' value={cant}  onChange={handleChange}></input></p><p className='numbers'>
-  <img src="https://img.icons8.com/offices/30/000000/plus.png" className='more' alt='plus'  onClick={(event)=> {
+  return (<li className='menu-item-list' >
+    <p className='elements' >{obj1.Descripcion}</p>
+    <p className='numbers' >S/.{obj1.Precio}</p>
+    <p className='numbers'>
+      <input className='quant-prod' type='text' value={cant}  onChange={handleChange}></input>
+    </p><p className='numbers'>
+      <button className='more' onClick={(event)=> {
     event.preventDefault();
     const valor1= cant;
    // console.log(cant.value);
@@ -81,14 +83,15 @@ const ProductComponent = (props) => {
   
    buttonTotal(obj1);
    
-    }}></img></p></li>)
+    }}> <img src="plus.png" alt='plus'/> 
+    </button>
+    </p>
+    </li>)
 };
 
   function MenuComponent(props) {
     const [menu, setMenu]=useState([]);
-  
-   
-   
+    
       const [value1, loading, error] = useCollection(
         firebase.firestore().collection('Products'),
         {

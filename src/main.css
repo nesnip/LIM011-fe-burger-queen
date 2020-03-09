@@ -225,13 +225,10 @@
   width: 20px;
 }
 .more{
-
-  
  width: auto; 
- 
  /*  padding: 1em; */
   text-decoration: teal;
- 
+  background-color: silver;
 }
 .btnDelete{
   width: 30px;
