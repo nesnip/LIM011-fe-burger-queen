@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 //import ReactDOM from 'react-dom'
-import '../main.css';
+import '../index.css';
 import firebase from '../firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 

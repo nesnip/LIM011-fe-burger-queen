@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
-//import Ffgg from './ff.js';
-//import ReactDOM from 'react-dom';
 
-import '../main.css';
+import '../index.css';
 
 const ItemProduct = (props) => {
   const [cant, setCant]=useState();

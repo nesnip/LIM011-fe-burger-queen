@@ -1,7 +1,5 @@
 import React from 'react';
-import '../main.css';
-//import burguerheader from '../burguerheader.jpg';
-
+import '../index.css';
 
   function Header() {
     const element= (

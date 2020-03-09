@@ -1,12 +1,12 @@
-/* import React, { useState } from 'react';
+import React, { useState } from 'react';
 //import './App.css';
-import './main.css';
-import Header from './components/component-Header.js';
-import MenuComponent from './components/component-Menu.js';
-import OrderProducts from './components/orderProducts.js';
+import './index.css';
+import Header from './components/Header.jsx';
+import MenuComponent from './components/Menu.jsx';
+import OrderProducts from './components/OrderProducts.jsx';
 import firebase from './firebase';
 
-function App() {
+function View() {
   const [productsOrder, setProductOrder] = useState([]);
   const [totalCountCli, setTotalCountCli]= useState(0);
  
@@ -78,4 +78,4 @@ function App() {
   );
 }
 
-export default App; */
+export default View;

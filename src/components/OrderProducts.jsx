@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ItemOrder from './itemOrder'
+import ItemOrder from './ItemOrder'
 
 const OrderProducts = (props) => {
    
