@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import ItemOrder from './ItemOrder'
 
-const OrderProducts = (props) => {
+const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delProduct}) => {
    
     const [client,setClient] = useState('');
-    const order = props.productsOrder;
+    /* const order = props.productsOrder;
     const total = props.totalClient;
-    const reset = props.resetOrder;
+    const reset = props.resetOrder; */
     //const valTotal = props.tot
     //const totalCount= props.totalCountClient;
-    const sendOrderProd = props.sendOrder;
+    //const sendOrderProd = props.sendOrder;
 
     const eventChange = (event) => {
         const valor= event.target.value;
@@ -17,25 +17,9 @@ const OrderProducts = (props) => {
 
     }
    
-    //const delOrder= props.delProduct;
-/*     const buttonTotal = (event) => {
-        event.preventDefault();
-        console.log('total');
-        let totalCount = 0;
-        order.forEach(element => {
-            const price= element.Precio;
-            const quantity = element.Cantidad;
-            totalCount += (price * quantity);
-            console.log(totalCount);
-            setTotal(totalCount);
-        }
-        );
-          
-    }; */
-
     const buttonTotal = () => {
         let totalCount = 0;
-        order.forEach(element => {
+        productsOrder.forEach(element => {
             const price= element.Precio;
             const quantity = element.Cantidad;
             totalCount += (price * quantity);
@@ -47,33 +31,28 @@ const OrderProducts = (props) => {
           
     };
     
-    const sendOrder = () => {
+    const sendOrderKitchen = () => {
         if (client === '') {
             alert('Ingrese nombre del cliente');
         }
         else {
-            console.log(order);    
+            console.log(productsOrder);    
             const obj1 = {
                 Cliente: client,
-                Order: order,
-                Total: total
+                Order: productsOrder,
+                Total: totalClient, 
         }
-        sendOrderProd(obj1);
-        reset();
+        sendOrder(obj1);
+        resetOrder();
         setClient('');
         alert('La orden se envió con éxito');
         } 
     };
-        
-       
-                console.log('objFirebase');
-                //console.log(obj1);
-        //sendOrderProd(obj1);
     
-
+            
 
     const element = (
-        <section  class='orderClass' >
+        <section  className='orderClass' >
        <div>
        
        <br></br><label>Nombre del cliente:</label> <input className='input-name' onChange={eventChange} value={client} ></input></div>
@@ -85,16 +64,16 @@ const OrderProducts = (props) => {
         </div>
         <div className='tabContentOrder'>
         <ul className='menu-list-order'>
-                {order.map((obj, index) => <ItemOrder  key= {index} data={obj} delOrderProduct={props.delProduct}  />)}        
+                {productsOrder.map((obj, index) => <ItemOrder data-testid='item' key= {index} data={obj} delOrderProduct={delProduct}  />)}        
             </ul>
         <div className='total' >
         <label onClick={buttonTotal} >TOTAL</label>
       
          {/* <input value={total} ></input>  */}
-         <p>S/.{total}</p>
+         <p>S/.{totalClient}</p>
         </div>
         <div>
-        <button className='btnOrderSend' onClick={sendOrder} >ENVIAR ORDEN</button>
+        <button className='btnOrderSend' onClick={sendOrderKitchen} >ENVIAR ORDEN</button>
         </div>
 
         </div>  

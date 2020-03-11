@@ -9,9 +9,7 @@ import firebase from './firebase';
 function View() {
   const [productsOrder, setProductOrder] = useState([]);
   const [totalCountCli, setTotalCountCli]= useState(0);
- 
- 
- 
+
   const addProductItemOrderr = (obj) => {
     const newArray = [...productsOrder, obj];
     setProductOrder(newArray);

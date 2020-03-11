@@ -92,7 +92,7 @@ const ProductComponent = (props) => {
   function MenuComponent(props) {
     const [menu, setMenu]=useState([]);
     
-      const [value1, loading, error] = useCollection(
+      const [value1] = useCollection(
         firebase.firestore().collection('Products'),
         {
           snapshotListenOptions: { includeMetadataChanges: true },

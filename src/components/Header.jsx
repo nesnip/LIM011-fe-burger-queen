@@ -4,7 +4,7 @@ import '../index.css';
   function Header() {
     const element= (
       
-        <header class='logoheader'>
+        <header className='logoheader'>
           
           <h1 className='title-logo'>BURGUER QUEEN</h1>
           <img src='queenBurguer1.png' className="img-logo" alt="logo"/> 

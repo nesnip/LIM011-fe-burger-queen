@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 
 import '../index.css';
 
-const ItemProduct = (props) => {
+const ItemProduct = ({ data }) => {
   const [cant, setCant]=useState();
   //const [item, setItem]=useState([]);
-  const obj= props.data;
+  const { Descripcion, Precio } = data;
   //const obj11= props.productItem;
 
   function handleChange(event) {
@@ -28,13 +28,14 @@ const ItemProduct = (props) => {
  };
  
 
-  return (<li className='menu-item-list'><span>{obj.Descripcion} {obj.Precio}<input className='cant-prod' type='text' value={cant} onChange={handleChange}></input>
+  return (<li className='menu-item-list'><span><span data-testid='item'>{Descripcion}</span><span data-testid='item'>{ Precio }</span>
+  <input className='cant-prod' type='text' value={cant} onChange={handleChange}></input>
   <button className='more' onClick={(event)=> { 
     event.preventDefault();
    // console.log(cant.value);
    //console.log(arrMore);
-    more(obj.Descripcion, obj.Precio, cant);
+    more(Descripcion, Precio, cant);
    
-    }}>+</button></span></li>)
+    }}>Ag</button></span></li>)
 }
 export default ItemProduct;
