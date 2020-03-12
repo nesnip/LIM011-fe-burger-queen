@@ -6,7 +6,7 @@ import MenuComponent from './components/Menu.jsx';
 import OrderProducts from './components/OrderProducts.jsx';
 import firebase from './firebase';
 
-function View() {
+function OrderView() {
   const [productsOrder, setProductOrder] = useState([]);
   const [totalCountCli, setTotalCountCli]= useState(0);
 
@@ -71,9 +71,8 @@ function View() {
       <Header />
       <MenuComponent addProduct={addProductItemOrderr} totalClient={totClient} resetCant = {productsOrder} />
       <OrderProducts productsOrder={productsOrder} delProduct={delProductItemOrder} totalClient={totalCountCli} sendOrder={sendOrder} resetOrder = {resetOrder} />
-   
     </main>
   );
 }
 
-export default View;
+export default OrderView;

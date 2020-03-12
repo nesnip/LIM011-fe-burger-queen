@@ -40,7 +40,8 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
             const obj1 = {
                 Cliente: client,
                 Order: productsOrder,
-                Total: totalClient, 
+                Total: totalClient,
+                fecha: new Date(),
         }
         sendOrder(obj1);
         resetOrder();

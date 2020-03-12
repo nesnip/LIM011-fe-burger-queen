@@ -1,11 +1,11 @@
 import React from 'react';
-import ViewWaitr from './ViewWaitress'
+import OrderView from './Order-View'
 
 function App() {
   
   return (
     <div className='display-flex'>
-      <ViewWaitr />
+      <OrderView />
     </div>
   );
 }
