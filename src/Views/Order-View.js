@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 //import './App.css';
-import './index.css';
-import Header from './components/Header.jsx';
-import MenuComponent from './components/Menu.jsx';
-import OrderProducts from './components/OrderProducts.jsx';
-import firebase from './firebase';
+import '../index.css';
+import Header from '../components/Header.jsx';
+import MenuComponent from '../components/Menu.jsx';
+import OrderProducts from '../components/OrderProducts.jsx';
+import firebase from '../firebase';
 
 function OrderView() {
   const [productsOrder, setProductOrder] = useState([]);

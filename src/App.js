@@ -1,11 +1,12 @@
 import React from 'react';
-import OrderView from './Order-View'
+import Routes from './Route';
+//import OrderView from './Order-View'
 
 function App() {
   
   return (
     <div className='display-flex'>
-      <OrderView />
+      <Routes />
     </div>
   );
 }
