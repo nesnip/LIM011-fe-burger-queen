@@ -1,9 +1,12 @@
 import React from 'react';
+import OrderKitchen from '../components/OrderKitchen';
+import firebase from '../firebase';
 
 const KitchenView = () => {
     return (
-        <h1>Segunda Tarea de Usuario</h1>
-    )
-
+        <main>
+            <OrderKitchen />
+        </main>
+    );
 }
 export default KitchenView;

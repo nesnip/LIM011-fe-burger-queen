@@ -12,11 +12,6 @@ const ProductComponent = (props) => {
   const totalCta = props.totClient;
   
   const obj1 = props.dataDeUnProducto;
- // const rCant= props.rsCant;
- 
- 
- // console.log(obj1);
-
 
   function handleChange(event) {
     //event.preventDefault();
@@ -113,12 +108,10 @@ const ProductComponent = (props) => {
         return obj;
        
       });
-     
     const result = arrProducts.filter((elem) => elem.Categoria === nombreDeLaCategoria);
     //props.resetCant(result);
     setMenu(result);
-   
-    }
+   }
   
     const element= (
  
