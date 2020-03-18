@@ -57,7 +57,7 @@ function OrderView() {
     .add({
       obj
     })
-    console.log('Orders');
+    console.log(obj);
    }
    
    const resetOrder = () => {

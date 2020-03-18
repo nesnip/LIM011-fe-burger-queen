@@ -96,7 +96,7 @@ const ProductComponent = (props) => {
     
     function click(nombreDeLaCategoria){
       console.log(nombreDeLaCategoria);
-      //console.log(value1);
+      console.log(value1);
       const arrProducts = value1.docs.map((elem) => {
         const obj = {
           Categoria: elem.data().Categoria,
@@ -105,6 +105,7 @@ const ProductComponent = (props) => {
           id: elem.id,
         }
        // props.resetCant(obj);
+       console.log(obj)
         return obj;
        
       });
@@ -115,7 +116,7 @@ const ProductComponent = (props) => {
   
     const element= (
  
-      <aside id='menuClass' class='menuClass'>
+      <aside id='menuClass' className='menuClass'>
        <div className="titleTabs">
          <button className="tablinks" onClick={(event) => {
             event.preventDefault();
