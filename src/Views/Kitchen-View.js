@@ -5,6 +5,7 @@ import OrderKitchen from '../components/OrderKitchen';
 const KitchenView = () => {
     return (
         <main>
+           
             <OrderKitchen />
         </main>
     );

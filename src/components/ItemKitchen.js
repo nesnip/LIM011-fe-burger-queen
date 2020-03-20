@@ -4,9 +4,11 @@ const ItemKitchen = ({ descOrder }) => {
     const { Producto, Cantidad } = descOrder;
 
     const element = (
-        <li>
-          <p>  {Producto}{Cantidad}</p>
+     
+        <li className="card bg-info ">
+          <p> {Cantidad} {Producto}</p>
         </li>
+   
     ); 
     return element;
 

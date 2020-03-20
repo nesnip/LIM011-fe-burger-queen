@@ -230,3 +230,28 @@
   align-items: center;
   justify-content: space-around;
 }
+.detPro{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.colorDetOrd{
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.chkbox{
+  width: 25px;
+  height: 25px;
+}

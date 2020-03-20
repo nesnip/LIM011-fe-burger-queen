@@ -8,7 +8,7 @@ const ProductKitchen = ({ dataProduct }) => {
 console.log(dataProduct)
 const { Nombre, Pedido, Fecha } = dataProduct;
 console.log(Pedido)
-const [hour, setHour]=useState(Fecha);
+const [hour, setHour]=useState('');
 
 const secondsToString=(seconds)=> {
   var hour = Math.floor(seconds / 3600);
@@ -20,13 +20,16 @@ const secondsToString=(seconds)=> {
   return hour + ':' + minute + ':' + second;
 }
 
-const endHour = ({Fecha}) => {
+const endHour = () => {
   //let dateEnd = new Date();
   console.log(hour);
   let date =  new Date().toString();
   const timeEnd = new Date(date.substring(0, date.indexOf('GMT')));
   console.log(timeEnd);
-  const hourF= new Date(hour);
+ /*  const hourF= new Date(hour);
+  console.log(hourF);
+  const fech = timeEnd.getTime() - hourF.getTime(); */
+  const hourF= new Date(Fecha);
   console.log(hourF);
   const fech = timeEnd.getTime() - hourF.getTime();
  
@@ -40,15 +43,22 @@ const endHour = ({Fecha}) => {
 console.log(hour);
 
   const element = (
-      <li>
-        <ul>
-        <p>{ Nombre }   { Fecha }</p> 
-        <input type="checkbox" onChange={endHour}></input>
-        <label>Tiempo de demora</label><p>{hour}</p>
+      <li className="card bg-warning ">
+        <ul >
+        <span><p><label>Cliente:</label> { Nombre }</p></span>
+        <label>Toma de pedido: </label> { Fecha }<br />
+        <label>Estado del Pedido:  </label>
+        <input type="checkbox" className='chkbox' onChange={endHour}></input><br />
+       
+        <span><label>Tiempo de demora: </label><p>{hour}</p></span> 
+        <div className='colorDetOrd'>
+        <label>Detalle del Pedido</label>
         { 
-          Pedido.map((el, index)=><ItemKitchen key='index' descOrder={el} />)
-
+          Pedido.map((el, index)=>
+          <ItemKitchen key='index' descOrder={el} />)
          }
+        </div>
+       
         </ul>      
       </li>
   )
