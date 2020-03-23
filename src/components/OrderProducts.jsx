@@ -62,6 +62,7 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
          <button>Producto</button>
          <button>Precio (S/.)</button>
          <button>Cantidad</button>
+         <button>Eliminar</button>
         </div>
         <div className='tabContentOrder'>
         <ul className='menu-list-order'>

@@ -1,10 +1,12 @@
 import React from 'react';
 import OrderKitchen from '../components/OrderKitchen';
+import '../index.css';
+
 //import firebase from '../firebase';
 
 const KitchenView = () => {
     return (
-        <main>
+        <main className='container'>
            
             <OrderKitchen />
         </main>
