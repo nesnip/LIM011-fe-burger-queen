@@ -17,7 +17,7 @@ function OrderView() {
     console.log(newArray);
     console.log(newArray.id);
   };
-  //console.log(productsOrder);
+  console.log(productsOrder);
  
 
   const totClient = (valor) => {
@@ -56,6 +56,15 @@ function OrderView() {
     .collection('orders')
     .add({
       obj
+    }).then(objeto=>{
+      console.log(objeto.id)
+      firebase.firestore()
+      .collection('orders').doc(objeto.id).update({
+        ID: objeto.id,
+        Estado: '',
+        Tiempo_Espera: '',
+      })
+        
     })
     console.log(obj);
    }

@@ -4,12 +4,7 @@ import ItemOrder from './ItemOrder'
 const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delProduct}) => {
    
     const [client,setClient] = useState('');
-    /* const order = props.productsOrder;
-    const total = props.totalClient;
-    const reset = props.resetOrder; */
-    //const valTotal = props.tot
-    //const totalCount= props.totalCountClient;
-    //const sendOrderProd = props.sendOrder;
+
 
     const eventChange = (event) => {
         const valor= event.target.value;
@@ -23,8 +18,6 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
             const price= element.Precio;
             const quantity = element.Cantidad;
             totalCount += (price * quantity);
-            console.log(totalCount);
-            /* setTotal(totalCount); */
         }
         );
         return totalCount;
@@ -36,13 +29,15 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
             alert('Ingrese nombre del cliente');
         }
         else {
-            console.log(productsOrder);    
+            console.log(productsOrder); 
             const obj1 = {
                 Cliente: client,
                 Order: productsOrder,
                 Total: totalClient,
                 Fecha: new Date(),
+               
         }
+        console.log(obj1);
         sendOrder(obj1);
         resetOrder();
         setClient('');
@@ -56,12 +51,12 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
         <section  className='orderClass' >
        <div>
        
-       <br></br><label>Nombre del cliente:</label> <input className='input-name' onChange={eventChange} value={client} ></input></div>
+       <br></br><span className="label label-danger">Nombre del cliente:</span> <input className='input-name' onChange={eventChange} value={client} ></input></div>
        <br></br>
         <div className="titleTabsOrder"> 
+         <button>Cantidad</button>
          <button>Producto</button>
          <button>Precio (S/.)</button>
-         <button>Cantidad</button>
          <button>Eliminar</button>
         </div>
         <div className='tabContentOrder'>
@@ -71,11 +66,12 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
         <div className='total' >
         <label onClick={buttonTotal} >TOTAL</label>
       
-         {/* <input value={total} ></input>  */}
+       
          <p>S/.{totalClient}</p>
         </div>
         <div>
-        <button className='btnOrderSend' onClick={sendOrderKitchen} >ENVIAR ORDEN</button>
+        <button className='btn btn-primary' onClick={sendOrderKitchen} >ENVIAR ORDEN</button>
+       
         </div>
 
         </div>  

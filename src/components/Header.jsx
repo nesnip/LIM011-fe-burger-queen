@@ -7,12 +7,11 @@ import { Link }from 'react-router-dom'
          <header className='logoheader'>   
           <h1 className='title-logo'>BURGUER QUEEN</h1>
           <img src='queenBurguer1.png' className="img-logo" alt="logo"/> 
-          <nav class="navbar-header navbar navbar-right">
-          <ul class="active navbar-brand navbar navbar-right">
+          <nav className="navbar-header navbar navbar-right">
+          <ul className="active navbar-brand navbar navbar-right">
             <li>
-              {/* <Link to='/OrderView'>Vista Pedido </Link> */}
-
-              <Link to='/KitchenView'> Vista Cocina</Link>
+              <Link to='/KitchenView'> Ordenes en espera   ///  </Link>
+              <Link to='/ReadyView'> Ordenes Listas</Link>
             </li>
           </ul>
           </nav>

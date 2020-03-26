@@ -1,22 +1,25 @@
 import React, {useState} from 'react';
 import firebase from '../firebase';
 import { useCollectionData} from 'react-firebase-hooks/firestore';
-import ProductKitchen from './ProductKitchen';
-import 'bootstrap/dist/css/bootstrap.css';
+import ReadyOrders from './ReadyOrders';
 import { Link }from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
 import '../index.css';
 
-const OrderKitchen = () => {
-    const [kitchen, setKitchen] = useState([]);
+const ReadyOrdersKitchen = () => {
+   
+    const [readyOrdersKitchen, setReadyOrdersKitchen] = useState([]);
+    
     const [value] = useCollectionData(
         firebase.firestore().collection('orders').orderBy('obj.Fecha','asc' ),
     );
   
-const waitOrders =()=>{
-    const filterArr= value.filter(ele => ele.Estado === '')
-     const arrKitchen = filterArr.map((elem)=>{
+const readyOrders =()=>{
+    const filterArr = value.filter(ele => ele.Estado === 'listo' );
+     const arrReadyOrdersKitchen = filterArr.map((elem)=>{
+         
        let date = elem.obj.Fecha.toDate().toString(); 
-        const objKitchen = {
+        const objReadyOrdersKitchen = {
             ID: elem.ID,
             Estado: elem.Estado,
             Nombre: elem.obj.Cliente,
@@ -29,11 +32,11 @@ const waitOrders =()=>{
               return objOrder;
             }), 
         }  
-        return objKitchen;   
+        return objReadyOrdersKitchen;   
     })
-    const result = arrKitchen;
-        setKitchen(result);  
-    };
+    const result = arrReadyOrdersKitchen;
+    setReadyOrdersKitchen(result); 
+};
     
     const element = (
       <section className='container' >
@@ -42,20 +45,15 @@ const waitOrders =()=>{
           <div className = 'row'>
           <nav class="navbar-brand navbar-header navbar-fixed-top navbar-right">
   <div class="container-fluid">
-   
-    <ul class="active navbar-brand navbar-right">
+  <ul class="active navbar-brand navbar-right">
      <li className='view'>
      <Link to='/OrderView'>  Vista Orden </Link>
      </li>
-     <li>
-     </li>
     </ul>
- 
+   
     <button class="btn btn-danger navbar-btn navbar-brand navbar-header" onClick = {(event)=> {
                  event.preventDefault();
-                 waitOrders();
-                 }}>Mostrar Ordenes en espera</button>  
-    
+                 readyOrders()}}>Mostrar Ordenes listas</button>          
   </div>
 </nav>
 </div>
@@ -66,11 +64,8 @@ const waitOrders =()=>{
               <div className = 'card-columns'> 
                 <ul>
             { 
-            kitchen.map((ele, index)=>
-            
-              <ProductKitchen key={index} dataProduct={ele} />
-             
-             
+            readyOrdersKitchen.map((ele, index)=>
+              <ReadyOrders key={index} dataProduct={ele} /> 
             )}
             
           </ul> 
@@ -79,8 +74,10 @@ const waitOrders =()=>{
               </div>
               </div>
               </div>
+            
+            
       </section> 
     )
       return element;
 }
-export default OrderKitchen;
+export default ReadyOrdersKitchen;

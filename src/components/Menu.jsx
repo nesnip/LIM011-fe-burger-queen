@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-//import ReactDOM from 'react-dom'
 import '../index.css';
 import firebase from '../firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
@@ -14,17 +13,12 @@ const ProductComponent = (props) => {
   const obj1 = props.dataDeUnProducto;
 
   function handleChange(event) {
-    //event.preventDefault();
-    console.log('hola');
     const valor= event.target.value;
     setCant(valor);
-    //console.log(cant);
   };
 
-
   function addItemProduct (id, desc, price, quantity) { 
-    console.log(quantity);
-   // console.log(desc, price, quantity.value)
+    
    if (quantity === '' ) {
     alert('Falta ingresar la cantidad');
   }
@@ -36,29 +30,19 @@ const ProductComponent = (props) => {
      Cantidad: quantity,
     };
     addProductItem(addItemProductObj);
-   //rsCant(cant);
+   
   }
     
   };
- /*  const checkInputQuant= (valor) => {
-    if (valor === 'undefined' ) {
-      alert('Falta ingresar la cantidad');
-    };
-  }; */
+
   let totalCount = 0;
   const buttonTotal = (objTotal) => {
-    console.log(objTotal);
          const price= objTotal.Precio;
-         console.log(price);
+        
          const quantity = cant;
-         console.log(quantity);
+        
          totalCount += (price * quantity);
-    console.log(totalCount);
-    //console.log(totalCount);
-    //props.totClient= totalCount;
-    totalCta(totalCount);
-    
- //return totalCount;       
+    totalCta(totalCount); 
 };
 
  
@@ -73,7 +57,7 @@ const ProductComponent = (props) => {
       <button className='more' onClick={(event)=> {
     event.preventDefault();
     const valor1= cant;
-   // console.log(cant.value);
+  
    addItemProduct(obj1.id, obj1.Descripcion, obj1.Precio, valor1);
   
    buttonTotal(obj1);
@@ -95,8 +79,6 @@ const ProductComponent = (props) => {
       );
     
     function click(nombreDeLaCategoria){
-      console.log(nombreDeLaCategoria);
-      console.log(value1);
       const arrProducts = value1.docs.map((elem) => {
         const obj = {
           Categoria: elem.data().Categoria,
@@ -104,13 +86,12 @@ const ProductComponent = (props) => {
           Precio: elem.data().Precio,
           id: elem.id,
         }
-       // props.resetCant(obj);
-       console.log(obj)
+        
         return obj;
        
       });
     const result = arrProducts.filter((elem) => elem.Categoria === nombreDeLaCategoria);
-    //props.resetCant(result);
+  
     setMenu(result);
    }
   
