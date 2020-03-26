@@ -214,6 +214,13 @@
   text-decoration: teal;
   background-color: silver;
 }
+.less{
+  width: 20px; 
+  height: 2px;
+  /*  padding: 1em; */
+   text-decoration: teal;
+   background-color: silver;
+ }
 .btnDelete{
   width: 30px;
 }
