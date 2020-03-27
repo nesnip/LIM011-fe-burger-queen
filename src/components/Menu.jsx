@@ -5,21 +5,28 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 
 //const arrMoreProd=[];
 const ProductComponent = (props) => {
-  const [cant, setCant]= useState('')
+  //const [cant, setCant]= useState('')
   
   const addProductItem = props.addProductsList;
-  const totalCta = props.totClient;
+  //const totalCta = props.totClient;
   
   const obj1 = props.dataDeUnProducto;
 
-  function handleChange(event) {
+  /* function handleChange(event) {
     const valor= event.target.value;
     setCant(valor);
-  };
+  }; */
 
-  function addItemProduct (id, desc, price, quantity) { 
+  function addItemProduct (id, desc, price /* quantity */) { 
+    const addItemProductObj = {
+      id: id,
+      Descripcion: desc,
+     Precio: price,
+     //Cantidad: quantity,
+    };
+    addProductItem(addItemProductObj);
     
-   if (quantity === '' ) {
+   /* if (quantity === '' ) {
     alert('Falta ingresar la cantidad');
   }
   else {
@@ -27,15 +34,15 @@ const ProductComponent = (props) => {
       id: id,
       Descripcion: desc,
      Precio: price,
-     Cantidad: quantity,
+     //Cantidad: quantity,
     };
     addProductItem(addItemProductObj);
    
   }
-    
+     */
   };
 
-  let totalCount = 0;
+  /* let totalCount = 0;
   const buttonTotal = (objTotal) => {
          const price= objTotal.Precio;
         
@@ -44,23 +51,23 @@ const ProductComponent = (props) => {
          totalCount += (price * quantity);
     totalCta(totalCount); 
 };
-
+ */
  
-  
   //coloca en value la cantidad de cada elemento
   return (<li className='menu-item-list' >
     <p className='elements' >{obj1.Descripcion}</p>
     <p className='numbers' >S/.{obj1.Precio}</p>
-    <p className='numbers'>
+    {/* <p className='numbers'>
       <input className='quant-prod' type='text' value={cant}  onChange={handleChange}></input>
-    </p><p className='numbers'>
+    </p> */}
+    <p className='numbers'>
       <button className='more' onClick={(event)=> {
     event.preventDefault();
-    const valor1= cant;
+    //const valor1= cant;
   
-   addItemProduct(obj1.id, obj1.Descripcion, obj1.Precio, valor1);
-  
-   buttonTotal(obj1);
+   //addItemProduct(obj1.id, obj1.Descripcion, obj1.Precio, valor1);
+   addItemProduct(obj1.id, obj1.Descripcion, obj1.Precio);
+  // buttonTotal(obj1);
    
     }}> <img src="plus.png" alt='plus'/> 
     </button>

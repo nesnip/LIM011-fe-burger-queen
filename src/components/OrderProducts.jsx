@@ -1,27 +1,24 @@
 import React, {useState} from 'react';
 import ItemOrder from './ItemOrder'
 
-const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delProduct}) => {
-   
+const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delProduct, numPro}) => {
+    console.log(numPro);
     const [client,setClient] = useState('');
-
 
     const eventChange = (event) => {
         const valor= event.target.value;
         setClient(valor);
-
     }
-   
+    let totalCount = 0;
     const buttonTotal = () => {
-        let totalCount = 0;
-        productsOrder.forEach(element => {
+        //let totalCount = 0;
+       /*  productsOrder.forEach(element => {
             const price= element.Precio;
-            const quantity = element.Cantidad;
+            const quantity = numPro;
             totalCount += (price * quantity);
         }
         );
-        return totalCount;
-          
+        return totalCount;      */ 
     };
     
     const sendOrderKitchen = () => {
@@ -45,29 +42,27 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
         } 
     };
     
-            
-
     const element = (
         <section  className='orderClass' >
        <div>
-       
        <br></br><span className="label label-danger">Nombre del cliente:</span> <input className='input-name' onChange={eventChange} value={client} ></input></div>
        <br></br>
         <div className="titleTabsOrder"> 
+         <button>      </button>
          <button>Cantidad</button>
+         <button>      </button>
          <button>Producto</button>
          <button>Precio (S/.)</button>
          <button>Eliminar</button>
         </div>
         <div className='tabContentOrder'>
         <ul className='menu-list-order'>
-                {productsOrder.map((obj, index) => <ItemOrder data-testid='item' key= {index} data={obj} delOrderProduct={delProduct}  />)}        
+                {productsOrder.map((obj, index) =>
+                <ItemOrder data-testid='item' key= {index} data={obj} delOrderProduct={delProduct} qntProd={numPro} />)}        
             </ul>
         <div className='total' >
         <label onClick={buttonTotal} >TOTAL</label>
-      
-       
-         <p>S/.{totalClient}</p>
+         <p>S/.{totalCount}</p>
         </div>
         <div>
         <button className='btn btn-primary' onClick={sendOrderKitchen} >ENVIAR ORDEN</button>
@@ -76,8 +71,6 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
 
         </div>  
        
-        
-        
         </section>
         
     );
