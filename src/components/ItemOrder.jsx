@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 const ItemOrder = ({ data, delOrderProduct/* , qntProd  */}) => {
     const { id, Descripcion, Precio } = data;
+    console.log(Precio)
     const [total, setTotal] = useState(1);
     //const qntProduct = qntProd;
     const [quant, setQuant] = useState(0);
@@ -10,17 +11,16 @@ const ItemOrder = ({ data, delOrderProduct/* , qntProd  */}) => {
     const moreQuantity = (event) => {
         event.preventDefault();
         setQuant(quant + 1);
-        
-        //setTotal(quant * Precio);
+       
     }
     const lessQuantity = (event) => {
         event.preventDefault();
         setQuant(quant - 1);
-        //setTotal(quant * Precio);
+        /* const tP= quant * Precio;
+        setTotal(tP);
+        console.log(total); */
     }
-  /*   const tP= quant * Precio;
-    setTotal(tP);
-    console.log(total); */
+    
 
     const btnEliminarItem = (event)  => {
         event.preventDefault();
@@ -28,7 +28,11 @@ const ItemOrder = ({ data, delOrderProduct/* , qntProd  */}) => {
         delOrderProduct(idItem);
         
     };
-   
+    console.log(quant)
+        const tP= quant * Precio;
+        console.log(tP);
+        //setTotal(tP);
+        //console.log(total); 
     return (
     <li className='menu-item-list-order'>
     <button className='less1' onClick = {lessQuantity}><img src="less.jpg" className='less' alt='less'/></button>
