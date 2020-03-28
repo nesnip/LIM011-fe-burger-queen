@@ -5,8 +5,8 @@ const ItemKitchen = ({ descOrder }) => {
 
     const element = (
      
-        <li className="card bg-info ">
-          <p> {Cantidad} {Producto}</p>
+        <li dta-testid='idItem' className="card bg-info ">
+          <p > {Cantidad} {Producto}</p>
         </li>
    
     ); 

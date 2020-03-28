@@ -34,16 +34,13 @@ const delayTime = () => {
     Tiempo_Espera: fech3,
   });
 };
-const removeWaitOrder =()=>{
-  console.log('hola');
-}
   const element = (
       <li className="card bg-warning ">
         <ul >
         <span><p><label>Cliente:</label> { Nombre }</p></span>
         <label>Toma de pedido: </label> { Fecha }<br />
         <label>Estado del Pedido:  </label>
-        <input type="checkbox" className='chkbox' onChange={ () => { delayTime(); removeWaitOrder(); } }></input><br />
+        <input type="checkbox" className='chkbox' onChange={delayTime}></input><br />
        
         <span><label>Tiempo de espera: </label><p>{hour}</p></span> 
         <div className='colorDetOrd'>

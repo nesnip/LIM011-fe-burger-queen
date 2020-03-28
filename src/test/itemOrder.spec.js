@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, getAllByTestId, getNodeText } from '@testing-library/react';
+import { render, getNodeText } from '@testing-library/react';
 import ItemOrder from '../components/ItemOrder';
 //import { act } from 'react-dom/test-utils';
 
@@ -17,18 +17,11 @@ describe('ItemOrder', () => {
    
     const container = render(<ItemOrder data={ obj } delOrderProduct={ eliminar } />);
     const listaDeNodos = container.getAllByTestId('item');
-    console.log(listaDeNodos);
-
-    expect(getNodeText(listaDeNodos[0])).toBe('Hamburguesa doble');
-    expect(getNodeText(listaDeNodos[1])).toBe(' 15');
-    expect(getNodeText(listaDeNodos[2])).toBe(' 2');
-   /*  expect(text).toBe('Hamburguesa doble');
-    expect(number1).toBe(15);
-    expect(number2).toBe(2); */
-    
-    /* expect(handler).toHaveBeenCalledTimes(1)
-    expect(product).toBe('Hamburguesa doble')
-    expect(price).toBe(15) */
+    //console.log(listaDeNodos);
+    expect(getNodeText(listaDeNodos[0])).toBe(' 2');
+    expect(getNodeText(listaDeNodos[1])).toBe('Hamburguesa doble');
+    expect(getNodeText(listaDeNodos[2])).toBe(' 15');
+   
   });
   
 
