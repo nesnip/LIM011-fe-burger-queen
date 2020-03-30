@@ -30,7 +30,7 @@ const ProductComponent = (props) => {
      Cantidad: quantity,
     };
     addProductItem(addItemProductObj);
-   
+  
   }
     
   };
@@ -120,9 +120,11 @@ const ProductComponent = (props) => {
       <div className='tabContent'>
       
    <ul className='menu-list'>
-      {menu.map((obj) => 
-        <ProductComponent key={obj.id} dataDeUnProducto={obj} addProductsList={props.addProduct} totClient={props.totalClient}  />
-      )}
+      {menu.length === 0 ?
+        'cargando productos' :
+        menu.map((obj) => 
+          <ProductComponent key={obj.id} dataDeUnProducto={obj} addProductsList={props.addProduct} totClient={props.totalClient}  />
+        )}
    </ul>
   </div>
       </aside>
