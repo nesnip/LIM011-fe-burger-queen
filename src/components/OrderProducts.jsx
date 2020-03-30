@@ -5,14 +5,12 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
    
     const [client,setClient] = useState('');
 
-
     const eventChange = (event) => {
         const valor= event.target.value;
         setClient(valor);
-
     }
    
-    const buttonTotal = () => {
+   /*  const buttonTotal = () => {
         let totalCount = 0;
         productsOrder.forEach(element => {
             const price= element.Precio;
@@ -22,7 +20,7 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
         );
         return totalCount;
           
-    };
+    }; */
     
     const sendOrderKitchen = () => {
         if (client === '') {
@@ -64,9 +62,7 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
                 {productsOrder.map((obj, index) => <ItemOrder data-testid='item' key= {index} data={obj} delOrderProduct={delProduct}  />)}        
             </ul>
         <div className='total' >
-        <label onClick={buttonTotal} >TOTAL</label>
-      
-       
+        <label /* onClick={buttonTotal} */ >TOTAL</label>
          <p>S/.{totalClient}</p>
         </div>
         <div>
