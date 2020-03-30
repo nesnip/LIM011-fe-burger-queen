@@ -4,13 +4,13 @@ import firebase from '../firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 //const arrMoreProd=[];
-const ProductComponent = (props) => {
+const ProductComponent = ({addProductsList, dataDeUnProducto}) => {
   //const [cant, setCant]= useState('')
   
-  const addProductItem = props.addProductsList;
+  const addProductItem = addProductsList;
   //const totalCta = props.totClient;
   
-  const obj1 = props.dataDeUnProducto;
+  const {id, Descripcion, Precio} = dataDeUnProducto;
 
   /* function handleChange(event) {
     const valor= event.target.value;
@@ -55,8 +55,8 @@ const ProductComponent = (props) => {
  
   //coloca en value la cantidad de cada elemento
   return (<li className='menu-item-list' >
-    <p className='elements' >{obj1.Descripcion}</p>
-    <p className='numbers' >S/.{obj1.Precio}</p>
+    <p className='elements' >{Descripcion}</p>
+    <p className='numbers' >S/.{Precio}</p>
     {/* <p className='numbers'>
       <input className='quant-prod' type='text' value={cant}  onChange={handleChange}></input>
     </p> */}
@@ -66,7 +66,7 @@ const ProductComponent = (props) => {
     //const valor1= cant;
   
    //addItemProduct(obj1.id, obj1.Descripcion, obj1.Precio, valor1);
-   addItemProduct(obj1.id, obj1.Descripcion, obj1.Precio);
+   addItemProduct(id, Descripcion, Precio);
   // buttonTotal(obj1);
    
     }}> <img src="plus.png" alt='plus'/> 
@@ -75,7 +75,8 @@ const ProductComponent = (props) => {
     </li>)
 };
 
-  function MenuComponent(props) {
+  function MenuComponent({addProduct}) {
+    
     const [menu, setMenu]=useState([]);
     
       const [value1] = useCollection(
@@ -128,7 +129,7 @@ const ProductComponent = (props) => {
       
    <ul className='menu-list'>
       {menu.map((obj) => 
-        <ProductComponent key={obj.id} dataDeUnProducto={obj} addProductsList={props.addProduct} totClient={props.totalClient}  />
+        <ProductComponent key={obj.id} dataDeUnProducto={obj} addProductsList={addProduct} /* totClient={props.totalClient} */  />
       )}
    </ul>
   </div>

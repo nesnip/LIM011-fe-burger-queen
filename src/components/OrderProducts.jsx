@@ -1,26 +1,29 @@
 import React, {useState} from 'react';
 import ItemOrder from './ItemOrder'
 
-const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delProduct, numPro}) => {
-    console.log(numPro);
+const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delProduct, countTotal, tp}) => {
+   //const { Precio, Descripcion } = productsOrder;
+
     const [client,setClient] = useState('');
+    const [total, setTotal] = useState(0);
 
     const eventChange = (event) => {
         const valor= event.target.value;
         setClient(valor);
     }
-    let totalCount = 0;
-    const buttonTotal = () => {
-        //let totalCount = 0;
-       /*  productsOrder.forEach(element => {
-            const price= element.Precio;
-            const quantity = numPro;
-            totalCount += (price * quantity);
-        }
-        );
-        return totalCount;      */ 
-    };
+
+   
+        const ttt = total + countTotal;
+        setTotal(ttt);
+   
     
+    
+ /*  const buttonTotal = (objTotal) => {
+         const price= objTotal.Precio;
+         //const quantity = countTotal;
+         totalCount += totalCount + countTotal;
+    console.log(totalCount); 
+}; */
     const sendOrderKitchen = () => {
         if (client === '') {
             alert('Ingrese nombre del cliente');
@@ -42,27 +45,27 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
         } 
     };
     
+    totalClient = total;
+
     const element = (
         <section  className='orderClass' >
        <div>
+       
        <br></br><span className="label label-danger">Nombre del cliente:</span> <input className='input-name' onChange={eventChange} value={client} ></input></div>
        <br></br>
         <div className="titleTabsOrder"> 
-         <button>      </button>
          <button>Cantidad</button>
-         <button>      </button>
          <button>Producto</button>
          <button>Precio (S/.)</button>
          <button>Eliminar</button>
         </div>
         <div className='tabContentOrder'>
         <ul className='menu-list-order'>
-                {productsOrder.map((obj, index) =>
-                <ItemOrder data-testid='item' key= {index} data={obj} delOrderProduct={delProduct} qntProd={numPro} />)}        
+                {productsOrder.map((obj, index) => <ItemOrder data-testid='item' key= {index} data={obj} delOrderProduct={delProduct} countTotal={countTotal} cantidadprod={tp} />)}        
             </ul>
         <div className='total' >
-        <label onClick={buttonTotal} >TOTAL</label>
-         <p>S/.{totalCount}</p>
+        <label /* onClick={buttonTotal} */ >TOTAL</label>
+         <p>S/.{totalClient}</p>
         </div>
         <div>
         <button className='btn btn-primary' onClick={sendOrderKitchen} >ENVIAR ORDEN</button>
@@ -71,6 +74,8 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
 
         </div>  
        
+        
+        
         </section>
         
     );
