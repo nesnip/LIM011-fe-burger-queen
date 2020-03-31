@@ -20,9 +20,9 @@ function OrderView() {
   console.log(productsOrder);
  
 
-  /* const totClient = (valor) => {
+  const totClient = (valor) => {
     setTotalCountCli(totalCountCli + valor);
-  } */
+  }
 
   const delProductItemOrder = (id) => {
     console.log(productsOrder);
@@ -79,7 +79,7 @@ function OrderView() {
     <main className='display-flex'>
       <Header />
       <MenuComponent addProduct={addProductItemOrderr} /* totalClient={totClient} */ resetCant = {productsOrder} />
-      <OrderProducts productsOrder={productsOrder} delProduct={delProductItemOrder} totalClient={totalCountCli} sendOrder={sendOrder} resetOrder = {resetOrder} />
+      <OrderProducts productsOrder={productsOrder} delProduct={delProductItemOrder} countTotal={totClient} totalClient={totalCountCli} sendOrder={sendOrder} resetOrder = {resetOrder} />
     </main>
   );
 }

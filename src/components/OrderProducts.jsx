@@ -5,25 +5,18 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
    //const { Precio, Descripcion } = productsOrder;
 
     const [client,setClient] = useState('');
-    const [total, setTotal] = useState(0);
-
+    //const [total, setTotal] = useState(0);
+console.log(countTotal)
     const eventChange = (event) => {
         const valor= event.target.value;
         setClient(valor);
     }
-
+       /*  const ttt = total + countTotal;
+        setTotal(ttt); */
+    let totalCount = 0;
    
-        const ttt = total + countTotal;
-        setTotal(ttt);
+      totalCount += totalCount+ countTotal;
    
-    
-    
- /*  const buttonTotal = (objTotal) => {
-         const price= objTotal.Precio;
-         //const quantity = countTotal;
-         totalCount += totalCount + countTotal;
-    console.log(totalCount); 
-}; */
     const sendOrderKitchen = () => {
         if (client === '') {
             alert('Ingrese nombre del cliente');
@@ -45,7 +38,7 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
         } 
     };
     
-    totalClient = total;
+    //totalClient = total;
 
     const element = (
         <section  className='orderClass' >
@@ -65,7 +58,7 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
             </ul>
         <div className='total' >
         <label /* onClick={buttonTotal} */ >TOTAL</label>
-         <p>S/.{totalClient}</p>
+         <p>S/.{totalCount}</p>
         </div>
         <div>
         <button className='btn btn-primary' onClick={sendOrderKitchen} >ENVIAR ORDEN</button>
