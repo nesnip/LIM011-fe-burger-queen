@@ -1,4 +1,4 @@
-/* import React from 'react';
+import React from 'react';
 import Menu from '../components/Menu';
 import { render, fireEvent } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
@@ -26,4 +26,4 @@ describe('Menu', () => {
     )
 }
 
-) */
+)
