@@ -2,13 +2,16 @@
   "name": "burguer-queen",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://BarsadeJesus.github.io/LIM011-fe-burger-queen",
+  "homepage": "http://barsadejesus.github.io/LIM011-fe-burger-queen",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.4.1",
+    "dev": "^0.1.3",
     "firebase": "^7.8.0",
+    "firebase-mock": "^2.3.2",
+    "gh-pages": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-firebase-hooks": "^2.1.1",
@@ -39,7 +42,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0",
     "nodemon": "^2.0.2"
   }
 }

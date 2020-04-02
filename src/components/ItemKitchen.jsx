@@ -6,9 +6,8 @@ const ItemKitchen = ({ descOrder }) => {
     const element = (
      
         <li className="card bg-info ">
-          <p> {Cantidad} {Producto}</p>
+        <p  data-testid='IdItem' > {Cantidad} {Producto}</p>
         </li>
-   
     ); 
     return element;
 

@@ -9,19 +9,7 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
         const valor= event.target.value;
         setClient(valor);
     }
-   
-   /*  const buttonTotal = () => {
-        let totalCount = 0;
-        productsOrder.forEach(element => {
-            const price= element.Precio;
-            const quantity = element.Cantidad;
-            totalCount += (price * quantity);
-        }
-        );
-        return totalCount;
-          
-    }; */
-    
+  
     const sendOrderKitchen = () => {
         if (client === '') {
             alert('Ingrese nombre del cliente');

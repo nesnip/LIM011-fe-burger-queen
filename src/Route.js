@@ -8,7 +8,7 @@ import ReadyView from './Views/Ready-View';
 const Routes = () => {
     return (
       <Switch>
-        <Route exact path='/' component={OrderView} />
+          <Route exact path='/' component={OrderView} />
           <Route exact path='/OrderView' component={OrderView} />
           <Route exact path='/KitchenView' component={KitchenView} />
           <Route exact path='/ReadyView' component={ReadyView} />

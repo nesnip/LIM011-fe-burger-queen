@@ -26,13 +26,13 @@ describe('OrderProducts', () => {
     const container = render(<OrderProducts productsOrder={ obj } totalClient={ totCli } resetOrder={ resOrder } sendOrder={ sndOrder } delProduct={ deletProduct } />);
     const listaDeNodos = container.getAllByTestId('item');
     console.log(listaDeNodos);
-    expect(getNodeText(listaDeNodos[0])).toBe('Hamburguesa doble');
-    expect(getNodeText(listaDeNodos[1])).toBe(' 15');
-    expect(getNodeText(listaDeNodos[2])).toBe(' 2');
+    expect(getNodeText(listaDeNodos[0])).toBe(' 2');
+    expect(getNodeText(listaDeNodos[1])).toBe('Hamburguesa doble');
+    expect(getNodeText(listaDeNodos[2])).toBe(' 15');
     
-    expect(getNodeText(listaDeNodos[3])).toBe('Hamburguesa simple');
-    expect(getNodeText(listaDeNodos[4])).toBe(' 10');
-    expect(getNodeText(listaDeNodos[5])).toBe(' 1');
+    expect(getNodeText(listaDeNodos[3])).toBe(' 1');
+    expect(getNodeText(listaDeNodos[4])).toBe('Hamburguesa simple');
+    expect(getNodeText(listaDeNodos[5])).toBe(' 10');
    /*  expect(getNodeText(listaDeNodos[0])).toBe('Hamburguesa simple');
     expect(getNodeText(listaDeNodos[1])).toBe(' 10');
     expect(getNodeText(listaDeNodos[2])).toBe(' 1'); */

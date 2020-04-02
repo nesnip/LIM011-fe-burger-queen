@@ -4,22 +4,18 @@ import { useState } from 'react';
 import firebase from '../firebase';
 
 const ProductKitchen = ({ dataProduct }) => {
-
-const { Nombre, Pedido, Fecha, ID } = dataProduct;
-
-const [hour, setHour]=useState('');
-
-
-const secondsToString=(seconds)=> {
-  var hour = Math.floor(seconds / 3600);
-  hour = (hour < 10)? '0' + hour : hour;
-  var minute = Math.floor((seconds / 60) % 60);
-  minute = (minute < 10)? '0' + minute : minute;
-  var second = seconds % 60;
-  second = (second < 10)? '0' + second : second;
+  const { Nombre, Pedido, Fecha, ID } = dataProduct;
+  const [hour, setHour]=useState('');
+  
+  const secondsToString = (seconds) => {
+    let hour = Math.floor(seconds / 3600);
+    hour = (hour < 10)? '0' + hour : hour;
+    let minute = Math.floor((seconds / 60) % 60);
+    minute = (minute < 10)? '0' + minute : minute;
+    let second = seconds % 60;
+    second = (second < 10)? '0' + second : second;
   return hour + ':' + minute + ':' + second;
 }
-
 
 const delayTime = () => {
   let date =  new Date().toString();
@@ -34,30 +30,26 @@ const delayTime = () => {
     Tiempo_Espera: fech3,
   });
 };
-const removeWaitOrder =()=>{
-  console.log('hola');
-}
-  const element = (
-      <li className="card bg-warning ">
-        <ul >
-        <span><p><label>Cliente:</label> { Nombre }</p></span>
-        <label>Toma de pedido: </label> { Fecha }<br />
-        <label>Estado del Pedido:  </label>
-        <input type="checkbox" className='chkbox' onChange={ () => { delayTime(); removeWaitOrder(); } }></input><br />
-       
-        <span><label>Tiempo de espera: </label><p>{hour}</p></span> 
-        <div className='colorDetOrd'>
+
+const element = (
+  <li className="card bg-warning ">
+    <ul >
+      <span><p data-testid='IdItem'><label >Cliente:</label> { Nombre }</p></span>
+      <p data-testid='IdItem'><label>Toma de pedido: </label> { Fecha }</p>
+      <label>Estado del Pedido:  </label>
+      <input type="checkbox" className='chkbox' onChange={delayTime}></input><br /> 
+      <span><label >Tiempo de espera: </label><p>{hour}</p></span> 
+      <div className='colorDetOrd'>
         <label>Detalle del Pedido</label>
         { 
-          Pedido.map((el, index)=>
-          <ItemKitchen key='index' descOrder={el} />)
+          Pedido.map((el, index) =>
+          <ItemKitchen data-testid='IdItem' key='index' descOrder={el} />)
          }
-        </div>
-       
-        </ul>      
-      </li>
-  )
-  return element;
+      </div> 
+    </ul>      
+  </li>
+)
+return element;
 }
 
 export default ProductKitchen;
