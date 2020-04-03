@@ -24,7 +24,7 @@ const ProductComponent = ({ dataDeUnProducto, addProductsList, totClient }) => {
       };
       addProductItem(addItemProductObj);
     }  
-  };
+  }
   let totalCount = 0;
   const buttonTotal = (objTotal) => {
     const price= objTotal.Precio;
