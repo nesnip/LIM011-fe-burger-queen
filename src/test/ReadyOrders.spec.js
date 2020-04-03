@@ -1,10 +1,10 @@
 import React from 'react';
 import ReadyOrders from '../components/ReadyOrders';
-import { render, getAllByTestId, getNodeText } from '@testing-library/react';
+import { render, getNodeText } from '@testing-library/react';
 
 
 describe('ReadyOrders', () => {
-    it('Deberia mostrar dos ordenes listas',() => {
+  it('Deberia mostrar dos ordenes listas',() => {
         //const addProductItem = jest.fn();
         //const totalCta = jest.fn();
         //const obj1 = jest.fn();
