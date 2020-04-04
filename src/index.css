@@ -5,6 +5,7 @@
   
 }
 .display-flex {
+  background-color: mediumspringgreen;
   width: 100%;
   height: 100%;
  display: flex;
@@ -30,7 +31,7 @@
     margin-top: 22px;
 }
 .img-logo{
-    width: 105px;
+    width: 135px;
 }
 
 .menuClass{
@@ -39,7 +40,8 @@
   left: 10px;
   
   margin-top: 20px;*/
-  width: 40%;
+  
+  width: 50%;
     height: 70%;
   display: flex;
   flex-direction: column;
@@ -56,7 +58,7 @@
   background-color: #d1d6da;
   justify-content:center;
   align-content: center;
-    width: 60%;
+    width: 50%;
     height: 70%;
     text-align: left;
 }
@@ -108,7 +110,7 @@
 }
 .tabContent {
   
-  background-color:white;
+  background-color: mediumspringgreen;
   /* border: 2px solid red;  */
  
   display: flex;
@@ -133,7 +135,7 @@
   padding-left: 360px;
   margin-right: 10px;*/
   
-  background-color:white;
+  background-color: gold;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -185,9 +187,14 @@
     width : 32px;
     display: flex;
   flex-direction: row;
-  
- 
   }
+  .less{
+    width: 20px; 
+    height: 2px;
+    /*  padding: 1em; */
+     text-decoration: teal;
+     background-color: silver;
+   }
   .input-Bott-Order{
     display: flex;
     flex-direction: row;
@@ -214,6 +221,12 @@
   text-decoration: teal;
   background-color: silver;
 }
+.arrow{
+  width: 20px; 
+  /*  padding: 1em; */
+   text-decoration: teal;
+   background-color: silver;
+ }
 .btnDelete{
   width: 30px;
 }
