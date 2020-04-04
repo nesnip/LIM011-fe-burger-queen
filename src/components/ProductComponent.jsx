@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../index.css';
 
 const ProductComponent = ({ dataDeUnProducto, addProductsList, totClient }) => {
+  //console.log(cuanti)
+  //const yy = cuanti;
   const addProductItem = addProductsList;
   const totalCta = totClient;
   const obj1 = dataDeUnProducto;
@@ -13,12 +15,13 @@ const ProductComponent = ({ dataDeUnProducto, addProductsList, totClient }) => {
    
 }
 const lessQuantity = () => {
-    //event.preventDefault();
+  if(quant === 1) {
+    setQuant(1);
+  } else{ 
     setQuant(quant - 1);
-    /* const tP= quant * Precio;
-    setTotal(tP);
-    console.log(total); */
+  }   
 }
+//yy(quant);
   /* function handleChange(event) {
     const valor= event.target.value;
     setCant(valor);
@@ -50,7 +53,7 @@ const element = (
   <li className='menu-item-list' >
     <p data-testId='idItem' className='elements' >{obj1.Descripcion}</p>
     <p data-testId='idItem' className='numbers' >S/.{obj1.Precio}</p>
-    <button className='less1' onClick = {lessQuantity}><img src="less.jpg" className='less' alt='less'/></button>
+    <button name='lessQuantity' className='less1' onClick = {lessQuantity}><img src="less.jpg" className='less' alt='less'/></button>
     <p className='numbers' data-testid='item'> { quant }</p>
     <button className='more' onClick = {moreQuantity}><img src="plus.png" alt='plus'/></button>
     <p className='numbers'>

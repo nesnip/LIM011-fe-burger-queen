@@ -1,7 +1,9 @@
 import React from 'react';
 
+// eslint-disable-next-line react/prop-types
 const ItemOrder = ({ data, delOrderProduct }) => {
-    const { id, Descripcion, Precio, Cantidad  } = data;
+    // eslint-disable-next-line react/prop-types
+    const { id, Descripcion, Precio, Cantidad } = data;
     
     const btnEliminarItem = (event)  => {
         event.preventDefault();

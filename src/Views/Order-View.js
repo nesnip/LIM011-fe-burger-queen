@@ -9,12 +9,20 @@ import firebase from '../firebase';
 function OrderView() {
   const [productsOrder, setProductOrder] = useState([]);
   const [totalCountCli, setTotalCountCli]= useState(0);
+  //const [canti, setCanti]= useState(1);
 
+  //setCanti(1);
   const addProductItemOrderr = (obj) => {
     const newArray = [...productsOrder, obj];
+    const ff = newArray.map(ele=>ele.Cantidad)
+    console.log(ff);
+    //setCanti(ff);
     setProductOrder(newArray);
   };
- 
+
+ /*  const resetCantiti = () => setCanti(1)
+   console.log(canti) */
+
   const totClient = (valor) => {
     setTotalCountCli(totalCountCli + valor);
   }

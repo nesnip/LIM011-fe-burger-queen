@@ -67,7 +67,9 @@
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  display: flex;
   align-content:space-between;
+  justify-content: center;
   
 }
 .titleTabsOrder{
@@ -187,9 +189,11 @@
     width : 32px;
     display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   }
   .less{
-    width: 20px; 
+    width: 32px; 
     height: 2px;
     /*  padding: 1em; */
      text-decoration: teal;
@@ -278,6 +282,19 @@
 .chkbox{
   width: 25px;
   height: 25px;
+}
+.linkis{
+  color: #f31414;
+  font: bolder;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: inherit;
+  float: left;
+  border-bottom:black 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
 }
 .view{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
