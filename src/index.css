@@ -4,6 +4,10 @@
   box-sizing: border-box;
   
 }
+/* @font-face {
+  font-family: freshline;
+  src: url(freshline.font);
+} */
 .display-flex {
   background-color: mediumspringgreen;
   width: 100%;
@@ -17,17 +21,20 @@
 .logoheader {
     width: 100%;
     height: 35%;
-    background-color: #0c0e40;
+    background-color: #020b4b;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-content: space-between; 
   }
-  
+ 
+ 
 .title-logo{
    
     color: #f31414;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font: bold;
+   /*  font-family: freshline; */
     margin-top: 22px;
 }
 .img-logo{
@@ -283,6 +290,10 @@
   width: 25px;
   height: 25px;
 }
+.back{
+  width: 55px;
+  height: 40px;
+}
 .linkis{
   color: #f31414;
   font: bolder;
@@ -296,6 +307,25 @@
   padding: 14px 16px;
   transition: 0.3s;
 }
+.container1{
+  padding: 10px 20px 10px;
+  background-color: #d1d6da;
+  justify-content:center;
+  align-content: center;
+  width: 50%;
+  height: 70%;
+  text-align: left;
+}
+.llll{
+  
+  background-color: #d1d6da;
+  justify-content:center;
+  align-content: center;
+    width:100%;
+    height: 20%;
+    text-align: center;
+}
+
 .view{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font: bold;

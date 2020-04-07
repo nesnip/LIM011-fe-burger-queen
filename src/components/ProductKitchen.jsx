@@ -6,7 +6,7 @@ import firebase from '../firebase';
 const ProductKitchen = ({ dataProduct }) => {
   const { Nombre, Pedido, Fecha, ID } = dataProduct;
   const [hour, setHour]=useState('');
-  
+  // Convierte a horas, minuto y segundos con formato: h:m:s
   const secondsToString = (seconds) => {
     let hour = Math.floor(seconds / 3600);
     hour = (hour < 10)? '0' + hour : hour;
@@ -51,5 +51,4 @@ const element = (
 )
 return element;
 }
-
 export default ProductKitchen;

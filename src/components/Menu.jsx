@@ -57,7 +57,6 @@ function MenuComponent({addProduct, totalClient}) {
            <ProductComponent data-testid='IdItem' key={obj.id}
            dataDeUnProducto={obj}
            addProductsList={addProduct}
-          /*  cuanti={cuanti} */
            totClient={totalClient}  />
         )}
         </ul>

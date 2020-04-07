@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
 import ItemOrder from './ItemOrder'
 
-const OrderProducts = ({ cuanti, productsOrder, totalClient, resetOrder, sendOrder, delProduct}) => {
+const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delProduct}) => {
   const [client,setClient] = useState('');
+  //const [message, setMessage] = useState('uno');
     const eventChange = (event) => {
       const valor= event.target.value;
         setClient(valor);
       }
     const sendOrderKitchen = () => {
       if (client === '') {
-            alert('Ingrese nombre del cliente');
+        alert('Ingrese nombre del cliente');
+        //setMessage('Ingrese nombre del cliente')
       } else {
           const obj1 = {
             Cliente: client,
@@ -20,7 +22,6 @@ const OrderProducts = ({ cuanti, productsOrder, totalClient, resetOrder, sendOrd
           sendOrder(obj1);
           resetOrder();
           setClient('');
-          //cuanti();
           alert('La orden se envió con éxito');
         } 
     };
@@ -51,8 +52,8 @@ const OrderProducts = ({ cuanti, productsOrder, totalClient, resetOrder, sendOrd
           <button className='btn btn-danger' onClick={sendOrderKitchen} >
             ENVIAR ORDEN
           </button>
-        </div>
-      </div>   
+        </div>    
+      </div> 
     </section> 
   );
 return element;

@@ -12,21 +12,14 @@ const ProductComponent = ({ dataDeUnProducto, addProductsList, totClient }) => {
   const moreQuantity = () => {
     //event.preventDefault();
     setQuant(quant + 1);
-   
-}
-const lessQuantity = () => {
-  if(quant === 1) {
-    setQuant(1);
-  } else{ 
-    setQuant(quant - 1);
-  }   
-}
-//yy(quant);
-  /* function handleChange(event) {
-    const valor= event.target.value;
-    setCant(valor);
-  }; */
-  
+  }
+  const lessQuantity = () => {
+    if(quant === 1) {
+      setQuant(1);
+    } else{ 
+      setQuant(quant - 1);
+    }   
+  }  
   function addItemProduct (id, desc, price, quantity) {  
     if (quantity === '' ) {
       alert('Falta ingresar la cantidad');
