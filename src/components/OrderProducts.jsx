@@ -54,7 +54,7 @@ const OrderProducts = ({ productsOrder, totalClient, resetOrder, sendOrder, delP
          <p>S/.{totalClient}</p>
         </div>
         <div>
-        <button className='btn btn-primary' onClick={sendOrderKitchen} >ENVIAR ORDEN</button>
+        <button className='btn btn-danger' onClick={sendOrderKitchen} >ENVIAR ORDEN</button>
        
         </div>
 

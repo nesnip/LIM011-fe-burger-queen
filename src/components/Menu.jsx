@@ -5,9 +5,8 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import ProductComponent from '../components/ProductComponent';
 
 function MenuComponent({addProduct, totalClient}) {
-  
   const [menu, setMenu]=useState([]);
-  const [value1] = useCollection(
+  const [value1, loading] = useCollection(
     firebase.firestore().collection('Products'),
       {
         snapshotListenOptions: { includeMetadataChanges: true },
@@ -50,8 +49,10 @@ function MenuComponent({addProduct, totalClient}) {
       </div>
       <div className='tabContent'> 
         <ul className='menu-list'>
-          {menu.length === 0 ?
-          'cargando productos' :
+          {/* menu.length === 0 ?
+          'cargando productos' : */
+          loading ?
+          'Cargando productos...' :
           menu.map((obj) => 
            <ProductComponent data-testid='IdItem' key={obj.id}
            dataDeUnProducto={obj}
@@ -63,6 +64,5 @@ function MenuComponent({addProduct, totalClient}) {
       </aside>
     );
     return element;
-      // }
   }
 export default MenuComponent;

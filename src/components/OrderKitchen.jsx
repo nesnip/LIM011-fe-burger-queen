@@ -39,17 +39,18 @@ const element = (
   <section className='container' >
     <div className='container'>
       <div className = 'row'>
-        <nav class="navbar-brand navbar-header navbar-fixed-top navbar-right">
-          <div class="container-fluid">
-            <ul class="active navbar-brand navbar-right">
+        <nav className="navbar-brand navbar-header navbar-fixed-top navbar-right">
+          <div className="container-fluid">
+            <ul className="active navbar-brand navbar-right">
               <li className='view'>
-                <Link to='/OrderView'>  Vista Orden </Link>
-              </li>
-              <li>
+               {/*  <Link to='/OrderView'>  Vista Orden </Link> */}
+                <Link to='/OrderView'>
+                  <img src="back2.jpeg" className='back' alt='back' ></img>
+                </Link>
               </li>
             </ul>
             <button
-              class="btn btn-danger navbar-btn navbar-brand navbar-header"
+              className="btn btn-danger navbar-btn navbar-brand navbar-header"
               onClick = {(event)=> {
                  event.preventDefault();
                  waitOrders();

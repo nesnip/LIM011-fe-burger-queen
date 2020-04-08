@@ -4,33 +4,43 @@
   box-sizing: border-box;
   
 }
+/* @font-face {
+  font-family: freshline;
+  src: url(freshline.font);
+} */
+.ririri{
+  background-color: black;
+}
 .display-flex {
+  background-color: rgb(17, 223, 144);
   width: 100%;
   height: 100%;
  display: flex;
  flex-wrap: wrap;
- flex-direction: row;
-
-  
+ flex-direction: row;  
 } 
 .logoheader {
     width: 100%;
-    height: 35%;
-    background-color: #0c0e40;
+    height: 45%;
+    background-color: #020b4b;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-content: space-between; 
   }
-  
+ 
+ 
 .title-logo{
    
     color: #f31414;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font: bold;
+   /*  font-family: freshline; */
     margin-top: 22px;
 }
 .img-logo{
     width: 105px;
+    height: 90px;
 }
 
 .menuClass{
@@ -39,7 +49,8 @@
   left: 10px;
   
   margin-top: 20px;*/
-  width: 40%;
+  
+  width: 50%;
     height: 70%;
   display: flex;
   flex-direction: column;
@@ -56,7 +67,7 @@
   background-color: #d1d6da;
   justify-content:center;
   align-content: center;
-    width: 60%;
+    width: 50%;
     height: 70%;
     text-align: left;
 }
@@ -65,7 +76,9 @@
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  display: flex;
   align-content:space-between;
+  justify-content: center;
   
 }
 .titleTabsOrder{
@@ -108,7 +121,7 @@
 }
 .tabContent {
   
-  background-color:white;
+  background-color: rgb(17, 223, 144);
   /* border: 2px solid red;  */
  
   display: flex;
@@ -133,7 +146,7 @@
   padding-left: 360px;
   margin-right: 10px;*/
   
-  background-color:white;
+  background-color: gold;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -185,9 +198,16 @@
     width : 32px;
     display: flex;
   flex-direction: row;
-  
- 
+  justify-content: center;
+  align-items: center;
   }
+  .less{
+    width: 32px; 
+    height: 2px;
+    /*  padding: 1em; */
+     text-decoration: teal;
+     background-color: silver;
+   }
   .input-Bott-Order{
     display: flex;
     flex-direction: row;
@@ -214,6 +234,12 @@
   text-decoration: teal;
   background-color: silver;
 }
+.arrow{
+  width: 20px; 
+  /*  padding: 1em; */
+   text-decoration: teal;
+   background-color: silver;
+ }
 .btnDelete{
   width: 30px;
 }
@@ -266,6 +292,42 @@
   width: 25px;
   height: 25px;
 }
+.back{
+  width: 55px;
+  height: 40px;
+}
+.linkis{
+  color: #f31414;
+  font: bolder;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: inherit;
+  float: left;
+  border-bottom:black 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.container1{
+  padding: 10px 20px 10px;
+  background-color: #d1d6da;
+  justify-content:center;
+  align-content: center;
+  width: 50%;
+  height: 70%;
+  text-align: left;
+}
+.llll{
+  
+  background-color: #d1d6da;
+  justify-content:center;
+  align-content: center;
+    width:100%;
+    height: 20%;
+    text-align: center;
+}
+
 .view{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font: bold;
