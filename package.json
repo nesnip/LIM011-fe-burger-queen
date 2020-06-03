@@ -1,4 +1,6 @@
 {
+  "homepage": "https://BarsadeJesus.github.io/LIM011-fe-burger-queen/",
+  "name": "burguer-queen",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +19,8 @@
     "react-scripts": "3.3.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
@@ -45,7 +49,6 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "gh-pages": "^2.2.0"
+    "eslint-plugin-react-hooks": "^1.7.0"
   }
 }
