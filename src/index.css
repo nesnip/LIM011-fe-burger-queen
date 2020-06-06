@@ -271,10 +271,7 @@
   align-items: center;
 }
 .container{
-  width: 100px;
   background-color: #0c0e40;
-  margin-left: 0px;
-  margin-right: 0px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
